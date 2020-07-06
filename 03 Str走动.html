@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="lib/vue-2.4.0.js"></script>
+</head>
+<body>
+
+
+<div id="app">
+    <input type="button" value="动" @click="move">
+    <input type="button" value="停" @click="stop">
+    <h4>{{msg}}</h4>
+</div>
+
+<script>
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            msg: '利星行机械欢迎你',
+            intervalId: null
+        },
+        methods: {
+            move() {
+                if(this.intervalId != null){
+                    return
+                }
+                //解决this指向问题
+                var _this = this
+                this.intervalId = setInterval(() => {
+                    var start = _this.msg.substring(0, 1);
+                    var end = _this.msg.substring(1, _this.msg.length);
+                    _this.msg = end + start;
+                }, 600);
+            },
+            stop: function () {
+                clearInterval(this.intervalId)
+                this.intervalId = null
+            }
+        }
+    });
+</script>
+</body>
+</html>
