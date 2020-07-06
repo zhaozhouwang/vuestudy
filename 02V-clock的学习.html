@@ -18,7 +18,9 @@
     <div v-html="msg2"></div>
     <!-- v-bind: 可以被简写为:-->
     <input type="button" value="点我" v-bind:title="mytitle"><br>
-    <input type="button" value="点我" v-on:click="show"><br>
+    <input type="button" value="点我" :title="mytitle"><br>
+    <!-- v-on: 可以被简写为@-->
+    <input type="button" value="点我" @click="show"><br>
     <input type="button" value="点我" v-on:mouseover="show">
 </div>
 
