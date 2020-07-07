@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="lib/vue-2.4.0.js"></script>
+    <style>
+        .blue {
+            color: blue;
+        }
+
+        .thin {
+            font-weight: 200;
+        }
+
+        .italic {
+            font-style: italic;
+        }
+
+        .active {
+            letter-spacing: 0.5em;
+        }
+    </style>
+</head>
+<body>
+
+<!--将来new的vue实例会控制这个元素中的所有内容-->
+<div id="app">
+    <!--传统方式-->
+    <h1 class="blue thin ">利星行</h1><br>
+    <!--    vue 第一种使用方式-->
+    <h1 :class="['blue','italic']">利星行</h1><br>
+    <!--     可用三元表达式 -->
+    <h1 :class="['blue','italic' ,flag ? 'active' : 'thin']">利星行</h1><br>
+    <h1 :class="classObj">利星行</h1><br>
+</div>
+
+<script>
+
+
+    //创建一个vue实例子
+    var vm = new Vue({
+        //el表示当前new的vue实例要控制哪个区域
+        el: '#app',
+        //data属性中存放的是el中要用到的数据
+        data: {
+            flag: true,
+            classObj: ['blue', 'italic']
+        },
+    })
+</script>
+</body>
+</html>
