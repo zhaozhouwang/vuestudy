@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <script src="lib/vue-2.4.0.js"></script>
+    <script src="../lib/vue-2.4.0.js"></script>
 </head>
 <body>
 
 <!--将来new的vue实例会控制这个元素中的所有内容-->
 <div id="app">
-<p v-for="count in 10">{{count}}</p>
+    <p v-for="(val, key) in user">{{val}} --- {{key}}</p>
+    <p v-for="(val, key, i) in user">值是： {{ val }} --- 键是： {{key}} -- 索引： {{i}}</p>
 </div>
 
 <script>
@@ -21,7 +22,11 @@
         el: '#app',
         //data属性中存放的是el中要用到的数据
         data: {
-
+            user: {
+                id: 1,
+                name: 'tonyStark',
+                gender: 'male'
+            }
         },
     })
 </script>

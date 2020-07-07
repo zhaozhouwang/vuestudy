@@ -3,16 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <script src="lib/vue-2.4.0.js"></script>
+    <script src="../lib/vue-2.4.0.js"></script>
 </head>
 <body>
 
 <!--将来new的vue实例会控制这个元素中的所有内容-->
 <div id="app">
-    <p v-for="item in list">{{item.id}}----- {{item.name}}</p>
+<p v-for="count in 10">{{count}}</p>
 </div>
 
 <script>
+
 
     //创建一个vue实例子
     var vm = new Vue({
@@ -20,12 +21,7 @@
         el: '#app',
         //data属性中存放的是el中要用到的数据
         data: {
-            list: [
-                {id: 1, name: 'zs'},
-                {id: 2, name: 'zs2'},
-                {id: 3, name: 'zs3'},
-                {id: 4, name: 'zs4'}
-            ]
+
         },
     })
 </script>
