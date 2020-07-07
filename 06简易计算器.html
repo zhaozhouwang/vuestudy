@@ -38,20 +38,22 @@
         },
         methods: {
             calculate() {
-                switch (this.opt) {
-                    case "+":
-                        this.result = parseInt(this.n1) + parseInt(this.n2);
-                        break;
-                    case "-":
-                        this.result = this.n1 - this.n2;
-                        break;
-                    case "*":
-                        this.result = this.n1 * this.n2;
-                        break;
-                    case "/":
-                        this.result = this.n1 / this.n2;
-                        break;
-                }
+                // switch (this.opt) {
+                //     case "+":
+                //         this.result = parseInt(this.n1) + parseInt(this.n2);
+                //         break;
+                //     case "-":
+                //         this.result = this.n1 - this.n2;
+                //         break;
+                //     case "*":
+                //         this.result = this.n1 * this.n2;
+                //         break;
+                //     case "/":
+                //         this.result = this.n1 / this.n2;
+                //         break;
+                // }
+                var calStr = this.n1 + this.opt + this.n2;
+                this.result = eval(calStr);
             }
         }
     })
