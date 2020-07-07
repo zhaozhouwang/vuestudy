@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="lib/vue-2.4.0.js"></script>
+</head>
+<body>
+
+<!--将来new的vue实例会控制这个元素中的所有内容-->
+<div id="app">
+    <input type="button" @click="toggle" value="点我">
+    <!--    v-if 触发后  会被注释掉代码段  会重新删除/创建此段代码-->
+    <h1 v-if="flag">v-if</h1>
+    <!--    每次不会进行dom的删除和创建操作 知识变换了display属性 使其隐藏/显示-->
+    <h1 v-show="flag">v-show</h1>
+</div>
+
+
+<script>
+    //创建一个vue实例子
+    var vm = new Vue({
+        //el表示当前new的vue实例要控制哪个区域
+        el: '#app',
+        //data属性中存放的是el中要用到的数据
+        data: {
+            flag: true
+        },
+        methods: {
+            toggle() {
+                this.flag = !this.flag
+            }
+        }
+    })
+</script>
+</body>
+</html>
