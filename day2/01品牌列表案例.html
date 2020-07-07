@@ -85,6 +85,15 @@
                 this.id = this.name = ''
             },
             del(id) {
+                //plan1
+                /* this.list.some((item, i) => {
+            if (item.id == id) {
+              this.list.splice(i, 1)
+              // 在 数组的 some 方法中，如果 return true，就会立即终止这个数组的后续循环
+              return true;
+            }
+          }) */
+                //plan2
                 var index = this.list.findIndex(item => {
                     if (item.id == id) {
                         return true;
