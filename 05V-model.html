@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="lib/vue-2.4.0.js"></script>
+</head>
+<body>
+
+<!--将来new的vue实例会控制这个元素中的所有内容-->
+<div id="app">
+    <h4>{{msg}}</h4>
+
+    <!--    v-bind 只能实现数据的单项绑定  从M到V中-->
+    <input type="text" :value="msg">
+    <!--    v-model 可以实现双向数据绑定-->
+    <!--    v-model 只能运用在表单元素中-->
+    <input type="text" v-model="msg ">
+</div>
+
+<script>
+
+
+    //创建一个vue实例子
+    var vm = new Vue({
+        //el表示当前new的vue实例要控制哪个区域
+        el: '#app',
+        //data属性中存放的是el中要用到的数据
+        data: {
+            msg: '欢迎使用vue'
+        },
+    })
+</script>
+</body>
+</html>
