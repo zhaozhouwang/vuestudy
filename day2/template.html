@@ -9,11 +9,11 @@
 
 <!--将来new的vue实例会控制这个元素中的所有内容-->
 <div id="app">
-    <p v-for="(val, key) in user">{{val}} --- {{key}}</p>
-    <p v-for="(val, key, i) in user">值是： {{ val }} --- 键是： {{key}} -- 索引： {{i}}</p>
+
 </div>
 
 <script>
+
 
     //创建一个vue实例子
     var vm = new Vue({
@@ -21,11 +21,7 @@
         el: '#app',
         //data属性中存放的是el中要用到的数据
         data: {
-            user: {
-                id: 1,
-                name: 'tonyStark',
-                gender: 'male'
-            }
+
         },
     })
 </script>
